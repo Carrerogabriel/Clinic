@@ -19,15 +19,15 @@ public class EnchiridionService {
         this.repositoryEnchiridion = enchiridionRepository;
     }
 
-    public Enchiridion createEnchiridion(Enchiridion enchiridion) {
+    public Enchiridion save(Enchiridion enchiridion) {
         return repositoryEnchiridion.save(enchiridion);
     }
 
-    public List<Enchiridion> getAllEnchiridions() {
+    public List<Enchiridion> findAll() {
         return repositoryEnchiridion.findAll();
     }
 
-    public Optional<Enchiridion> getEnchiridionById(Long id) {
+    public Optional<Enchiridion> findById(Long id) {
         return repositoryEnchiridion.findById(id);
     }
 
