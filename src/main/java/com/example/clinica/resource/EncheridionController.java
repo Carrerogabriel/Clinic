@@ -34,7 +34,7 @@ public class EncheridionController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Enchiridion> updateEnchiridion(@PathVariable Long id, @RequestBody Enchiridion enchiridionDetails) {
-        Enchiridion updatedEnchiridion = serviceEnchiriodion.updateEnchiridion(id, enchiridionDetails);
+        Enchiridion updatedEnchiridion = serviceEnchiriodion.toAlter(id, enchiridionDetails);
         if (updatedEnchiridion != null) {
             return ResponseEntity.ok(updatedEnchiridion);
         } else {
