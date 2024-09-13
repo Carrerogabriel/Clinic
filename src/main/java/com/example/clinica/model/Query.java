@@ -11,7 +11,7 @@ public class Query extends EntityId{
 
     @ManyToOne
     @JoinColumn(name = "pacient_id")
-    private Person pacient;
+    private Pacient pacient;
 
     @ManyToOne
     @JoinColumn(name = "Medic_id")
@@ -41,11 +41,11 @@ public class Query extends EntityId{
         this.time = time;
     }
 
-    public Person getPacient() {
+    public Pacient getPacient() {
         return pacient;
     }
 
-    public void setPacient(Person pacient) {
+    public void setPacient(Pacient pacient) {
         this.pacient = pacient;
     }
 

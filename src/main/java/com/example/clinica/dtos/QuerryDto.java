@@ -1,16 +1,13 @@
 package com.example.clinica.dtos;
 
-import com.example.clinica.model.Enchiridion;
-import com.example.clinica.model.Medic;
-import com.example.clinica.model.Person;
-import com.example.clinica.model.Query;
+import com.example.clinica.model.*;
 
 import java.time.LocalDateTime;
 
 public class QuerryDto {
 
     private LocalDateTime time;
-    private Person pacient;
+    private Pacient pacient;
     private Medic medic;
     private Enchiridion enchiridion;
     private String reason;
@@ -21,7 +18,7 @@ public class QuerryDto {
     public QuerryDto(){
     }
 
-    public QuerryDto(LocalDateTime time, Person pacient, Medic medic, Enchiridion enchiridion, String reason, String diagnosis, String prescription, String status){
+    public QuerryDto(LocalDateTime time, Pacient pacient, Medic medic, Enchiridion enchiridion, String reason, String diagnosis, String prescription, String status){
 
         this.time = time;
         this.medic = medic;
@@ -41,11 +38,11 @@ public class QuerryDto {
         this.time = time;
     }
 
-    public Person getPacient() {
+    public Pacient getPacient() {
         return pacient;
     }
 
-    public void setPacient(Person pacient) {
+    public void setPacient(Pacient pacient) {
         this.pacient = pacient;
     }
 

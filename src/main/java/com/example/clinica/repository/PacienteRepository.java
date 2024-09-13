@@ -1,10 +1,12 @@
 package com.example.clinica.repository;
 
 import com.example.clinica.exception.CustomQuerydslPredicateExecutor;
-import com.example.clinica.model.Person;
+import com.example.clinica.model.Pacient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonRepository extends JpaRepository<Person, Long>, CustomQuerydslPredicateExecutor<Person> {
+public interface PacienteRepository extends JpaRepository<Pacient, Long>, CustomQuerydslPredicateExecutor<Pacient> {
+
+
 }

@@ -4,7 +4,7 @@ import com.example.clinica.enns.Specialty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
-@Entity
+@Entity(name = "Medic")
 public class Medic extends Person{
 
     @Column

@@ -1,32 +1,28 @@
 package com.example.clinica.resource;
 
-
-import com.example.clinica.dtos.PersonDto;
-import com.example.clinica.model.Person;
-import com.example.clinica.service.PersonService;
+import com.example.clinica.dtos.PacientDto;
+import com.example.clinica.model.Pacient;
+import com.example.clinica.service.PacientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.AbstractController;
 
 import java.net.URI;
-import java.util.List;
-
 
 @RestController
-@RequestMapping("/api/person")
-public class PersonController  {
+@RequestMapping("/api/pacient")
+public class PacientRepository {
 
     @Autowired
-    private PersonService servicePerson;
+    private PacientService servicePacient;
 
     @PostMapping()
-    public ResponseEntity save(@RequestBody Person person){
-        Person save = servicePerson.save(person);
-        return ResponseEntity.created(URI.create("/person/salvar" + person.getId())).body(save);
+    public ResponseEntity save(@RequestBody Pacient pacient){
+        Pacient save = servicePacient.save(pacient);
+        return ResponseEntity.created(URI.create("/pacient/salvar" + pacient.getId())).body(save);
     }
 
     @GetMapping
@@ -34,28 +30,29 @@ public class PersonController  {
                                    @RequestParam(defaultValue = "0") int page,
                                    @RequestParam(defaultValue = "10") int size) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<PersonDto> person = servicePerson.findAll(filter, pageable);
-        return ResponseEntity.ok(person);
+        Page<PacientDto> pacient = servicePacient.findAll(filter, pageable);
+        return ResponseEntity.ok(pacient);
     }
 
 
     @GetMapping("/{id}")
     public  ResponseEntity findById(@PathVariable("id") Long id){
-        Person person = servicePerson.findById(id);
-        return ResponseEntity.ok().body(person);
+        Pacient pacient = servicePacient.findById(id);
+        return ResponseEntity.ok().body(pacient);
     }
 
     @DeleteMapping("{id}")
     public  ResponseEntity remove(@PathVariable("id") Long id){
-        servicePerson.remove(id);
+        servicePacient.remove(id);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping("{id}")
-    public  ResponseEntity update(@PathVariable("id") Long id, @RequestBody Person entity){
-        Person chaged = servicePerson.toAlter(id, entity);
+    public  ResponseEntity update(@PathVariable("id") Long id, @RequestBody Pacient entity){
+        Pacient chaged = servicePacient.toAlter(id, entity);
         return  ResponseEntity.ok().body(chaged);
     }
 
 }
+
 

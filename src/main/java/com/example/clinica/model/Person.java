@@ -1,27 +1,20 @@
 package com.example.clinica.model;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 
 
-@Entity
 public class Person extends EntityId {
 
     @Column
     private String name;
-
     @Column
     private String rg;
-
     @Column
     private String cpf;
-
     @Column
     private String number;
-
     @Column
     private String age;
-
     @Column
     private String address;
 
