@@ -1,6 +1,7 @@
 package com.example.clinica.dtos;
 
 import com.example.clinica.model.Enchiridion;
+import com.example.clinica.model.Pacient;
 import com.example.clinica.model.Person;
 import com.example.clinica.model.Query;
 
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 public class EnchiridionDto {
 
     private Long id;
-    private Person pacient;
+    private Pacient pacient;
     private Query quaries;
     private LocalDateTime hours;
     private String history;
@@ -18,7 +19,7 @@ public class EnchiridionDto {
 
     }
 
-    public EnchiridionDto(Long id, Person pacient, Query queries, LocalDateTime hours, String history){
+    public EnchiridionDto(Long id, Pacient pacient, Query queries, LocalDateTime hours, String history){
 
         this.id = id;
         this.pacient = pacient;
@@ -27,11 +28,11 @@ public class EnchiridionDto {
         this.history = history;
     }
 
-    public Person getPacient() {
+    public Pacient getPacient() {
         return pacient;
     }
 
-    public void setPacient(Person pacient) {
+    public void setPacient(Pacient pacient) {
         this.pacient = pacient;
     }
 

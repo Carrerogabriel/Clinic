@@ -9,7 +9,7 @@ public class Enchiridion extends EntityId {
 
     @OneToOne
     @JoinColumn(name = "pacient_id")
-    private Person pacient;
+    private Pacient pacient;
 
     @OneToMany(mappedBy = "enchiridion")
     private List<Query> queries;
@@ -38,11 +38,11 @@ public class Enchiridion extends EntityId {
     @Column
     private String comments;
 
-    public Person getPacient() {
+    public Pacient getPacient() {
         return pacient;
     }
 
-    public void setPacient(Person pacient) {
+    public void setPacient(Pacient pacient) {
         this.pacient = pacient;
     }
 
